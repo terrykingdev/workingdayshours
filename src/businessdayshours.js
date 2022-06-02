@@ -120,7 +120,6 @@ function countBusinessHours(startTime, endTime, returnObject = false) {
     let day2Hours = Math.max(0, Math.min((endTime - day2Start) / 3600000, businessHours))
 
     let bh = 0
-    console.log("bd",bd,day1Hours,day2Hours)
     if (isSameDate(startTime, endTime)) {
         bh = Math.max(0, Math.min((endTime - startTime) / 3600000, businessHours))
         if (bd == 0) bh = 0
