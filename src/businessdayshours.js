@@ -17,12 +17,16 @@ function setEvents(events) {
     eventDates = events
 }
 
-function setTimes(startHours, startMinutes, endHours, endMinutes) {
+function setTimes(sHours, sMinutes, eHours, eMinutes) {
+    startHours=sHours
+    startMinutes=sMinutes
+    endHours=eHours
+    endMinutes=eMinutes
     let sDate = new Date(0)
     sDate.setHours(startHours, startMinutes, 0, 0)
     let eDate = new Date(0)
     eDate.setHours(endHours, endMinutes, 0, 0)
-    return (eDate - sDate) / 3600000
+    businessHours=(eDate - sDate) / 3600000
 }
 
 function countBusinessDays(startDate, endDate, returnObject = false) {
@@ -116,6 +120,7 @@ function countBusinessHours(startTime, endTime, returnObject = false) {
     let day2Hours = Math.max(0, Math.min((endTime - day2Start) / 3600000, businessHours))
 
     let bh = 0
+    console.log("bd",bd,day1Hours,day2Hours)
     if (isSameDate(startTime, endTime)) {
         bh = Math.max(0, Math.min((endTime - startTime) / 3600000, businessHours))
         if (bd == 0) bh = 0
