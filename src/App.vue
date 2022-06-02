@@ -85,9 +85,9 @@
   export default {
     name: 'App',
     data: () => ({
-      pickStartDate: '2022-06-02',
-      pickStartTime: '09:00',
-      pickEndDate: '2022-06-06',
+      pickStartDate: '2022-05-18',
+      pickStartTime: '08:30',
+      pickEndDate: '2022-05-19',
       pickEndTime: '08:30',
       events: [],
       businessDays:'',
@@ -99,7 +99,7 @@
       let data = await response.json()
       console.log(data['england-and-wales'].events)
       businessTimes.setEvents(data['england-and-wales'].events)
-      businessTimes.setTimes(9,0,17,0) // didn't need to set, this is the default
+      businessTimes.setTimes(8,30,17,0) // didn't need to set, this is the default
       this.calcDaysTimes()
     },
     methods:{
